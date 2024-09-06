@@ -1,0 +1,89 @@
+tma_backend_bound
+- tma_core_bound
+- - tma_divider
+- - tma_ports_utilization
+- - - tma_ports_utilized_0
+- - - - tma_mixing_vectors
+- - - - tma_serializing_operation
+- - - - - tma_slow_pause
+- - - tma_ports_utilized_1
+- - - tma_ports_utilized_2
+- - - tma_ports_utilized_3m
+- - - - tma_alu_op_utilization
+- - - - - tma_port_0
+- - - - - tma_port_1
+- - - - - tma_port_5
+- - - - - tma_port_6
+- - - - tma_load_op_utilization
+- - - - - tma_port_2
+- - - - - tma_port_3
+- - - - tma_store_op_utilization
+- - - - - tma_port_4
+- - - - - tma_port_7
+- tma_memory_bound
+- - tma_dram_bound
+- - - tma_mem_bandwidth
+- - - tma_mem_latency
+- - - - tma_local_dram
+- - - - tma_remote_cache
+- - - - tma_remote_dram
+- - tma_l1_bound
+- - - tma_4k_aliasing
+- - - tma_dtlb_load
+- - - - tma_load_stlb_hit
+- - - - tma_load_stlb_miss
+- - - tma_fb_full
+- - - tma_lock_latency
+- - - tma_split_loads
+- - - tma_store_fwd_blk
+- - tma_l2_bound
+- - tma_l3_bound
+- - - tma_contested_accesses
+- - - tma_data_sharing
+- - - tma_l3_hit_latency
+- - - tma_sq_full
+- - tma_pmm_bound
+- - tma_store_bound
+- - - tma_dtlb_store
+- - - - tma_store_stlb_hit
+- - - - tma_store_stlb_miss
+- - - tma_false_sharing
+- - - tma_split_stores
+- - - tma_store_latency
+tma_bad_speculation
+- tma_branch_mispredicts
+- tma_machine_clears
+tma_frontend_bound
+- tma_fetch_bandwidth
+- - tma_dsb
+- - tma_mite
+- - - tma_decoder0_alone
+- tma_fetch_latency
+- - tma_branch_resteers
+- - - tma_clears_resteers
+- - - tma_mispredicts_resteers
+- - - tma_unknown_branches
+- - tma_dsb_switches
+- - tma_icache_misses
+- - tma_itlb_misses
+- - tma_lcp
+- - tma_ms_switches
+tma_retiring
+- tma_heavy_operations
+- - tma_few_uops_instructions
+- - tma_microcode_sequencer
+- - - tma_assists
+- - - tma_cisc
+- tma_light_operations
+- - tma_fp_arith
+- - - tma_fp_scalar
+- - - tma_fp_vector
+- - - - tma_fp_vector_128b
+- - - - tma_fp_vector_256b
+- - - - tma_fp_vector_512b
+- - - tma_x87_use
+- - tma_fused_instructions
+- - tma_memory_operations
+- - tma_non_fused_branches
+- - tma_nop_instructions
+- - tma_other_light_ops

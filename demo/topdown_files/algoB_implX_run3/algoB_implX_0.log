@@ -1,0 +1,274 @@
+
+       28459936536      branches:u                                                              (4.72%)
+         203186910      branch-misses:u                  #    0.71% of all branches             (5.66%)
+        1099253008      cache-misses:u                   #   36.568 % of all cache refs         (6.60%)
+        3006069108      cache-references:u                                                      (7.55%)
+           3206588      L1-icache-load-misses:u                                                 (8.48%)
+        3273868001      L1-dcache-load-misses:u          #    7.21% of all L1-dcache accesses   (8.48%)
+       48626707801      L1-dcache-loads:u                                                       (7.53%)
+        9969365689      L1-dcache-stores:u                                                      (7.56%)
+         597043902      LLC-load-misses:u                #   26.67% of all LL-cache accesses    (7.58%)
+        2253256678      LLC-loads:u                                                             (7.61%)
+          12757541      LLC-store-misses:u                                                      (1.94%)
+          31719224      LLC-stores:u                                                            (1.94%)
+        8115417576 ns   duration_time:u                                                       
+                 0      FP_ARITH_INST_RETIRED.128B_PACKED_SINGLE:u #      0.0 %  tma_fp_vector          
+                                                  #      0.0 %  tma_fp_arith           
+                                                  #      2.2 %  tma_other_light_ops      (5.76%)
+      112230754407      INST_RETIRED.ANY:u               #     -0.2 %  tma_heavy_operations   
+                                                  #      6.6 %  tma_light_operations   
+                                                  #      0.4 %  tma_fused_instructions 
+                                                  #      2.8 %  tma_memory_operations  
+                                                  #      1.2 %  tma_non_fused_branches 
+                                                  #      0.0 %  tma_nop_instructions     (6.71%)
+       25157282680      BR_INST_RETIRED.ALL_BRANCHES:u                                          (7.67%)
+        4184385830      CPU_CLK_UNHALTED.REF_XCLK:u      #      6.4 %  tma_retiring           
+                                                  #      0.0 %  tma_x87_use              (7.66%)
+      127322981560      UOPS_EXECUTED.THREAD:u                                                  (8.62%)
+                34      FP_ARITH_INST_RETIRED.SCALAR_DOUBLE:u #      0.0 %  tma_fp_scalar            (8.61%)
+                 0      FP_ARITH_INST_RETIRED.512B_PACKED_SINGLE:u                                        (8.61%)
+             13426      UOPS_EXECUTED.X87:u                                                     (8.60%)
+                 0      FP_ARITH_INST_RETIRED.SCALAR_SINGLE:u                                        (8.60%)
+       47152320305      MEM_INST_RETIRED.ANY:u                                                  (8.60%)
+        4192074162      CPU_CLK_UNHALTED.ONE_THREAD_ACTIVE:u                                        (7.64%)
+                 0      FP_ARITH_INST_RETIRED.256B_PACKED_DOUBLE:u                                        (7.66%)
+      403101808010      CPU_CLK_UNHALTED.THREAD:u                                               (7.66%)
+                 0      FP_ARITH_INST_RETIRED.128B_PACKED_DOUBLE:u                                        (7.66%)
+      103119668235      UOPS_RETIRED.RETIRE_SLOTS:u                                             (7.66%)
+          38446171      INST_RETIRED.NOP:u                                                      (7.66%)
+        6407576608      UOPS_RETIRED.MACRO_FUSED:u                                              (7.65%)
+                 0      FP_ARITH_INST_RETIRED.512B_PACKED_DOUBLE:u                                        (7.65%)
+                 0      FP_ARITH_INST_RETIRED.256B_PACKED_SINGLE:u                                        (7.65%)
+        8115417576 ns   duration_time:u                                                       
+                 0      MEM_LOAD_RETIRED.LOCAL_PMM:u     #     15.6 %  tma_dram_bound         
+                                                  #      0.0 %  tma_pmm_bound            (7.64%)
+         490954123      cpu/L1D_PEND_MISS.FB_FULL,cmask=0x1/u #      0.4 %  tma_l2_bound             (7.63%)
+       89507784865      CYCLE_ACTIVITY.STALLS_L2_MISS:u  #      6.5 %  tma_l3_bound             (7.62%)
+       92542704753      CYCLE_ACTIVITY.STALLS_L1D_MISS:u                                        (7.62%)
+           9555408      MEM_LOAD_L3_MISS_RETIRED.REMOTE_FWD:u                                        (7.62%)
+         714606370      MEM_LOAD_RETIRED.FB_HIT:u                                               (7.62%)
+                 0      MEM_LOAD_L3_MISS_RETIRED.REMOTE_PMM:u                                        (7.61%)
+       62744709507      CYCLE_ACTIVITY.STALLS_L3_MISS:u                                         (7.61%)
+      412435603001      CPU_CLK_UNHALTED.THREAD:u                                               (7.61%)
+        2544841875      MEM_LOAD_RETIRED.L1_MISS:u                                              (7.61%)
+         114998277      MEM_LOAD_L3_MISS_RETIRED.REMOTE_DRAM:u                                        (7.61%)
+         137683440      MEM_LOAD_L3_MISS_RETIRED.LOCAL_DRAM:u                                        (7.62%)
+           1289162      MEM_LOAD_L3_MISS_RETIRED.REMOTE_HITM:u                                        (7.62%)
+         441050681      MEM_LOAD_RETIRED.L2_HIT:u                                               (7.61%)
+        8115417576 ns   duration_time:u                                                       
+        4302316816      CPU_CLK_UNHALTED.REF_XCLK:u      #      1.4 %  tma_frontend_bound     
+                                                  #      7.3 %  tma_ports_utilized_1   
+                                                  #      3.3 %  tma_ports_utilized_2   
+                                                  #     46.6 %  tma_ports_utilized_0   
+                                                  #     86.6 %  tma_backend_bound      
+                                                  #      7.6 %  tma_bad_speculation    
+                                                  #     51.7 %  tma_core_bound         
+                                                  #     34.9 %  tma_memory_bound         (7.61%)
+       23835473429      IDQ_UOPS_NOT_DELIVERED.CORE:u                                           (7.61%)
+        3479146581      EXE_ACTIVITY.BOUND_ON_STORES:u   #      0.8 %  tma_store_bound          (7.60%)
+        1374310256      INT_MISC.RECOVERY_CYCLES:u                                              (7.60%)
+       30332485429      EXE_ACTIVITY.1_PORTS_UTIL:u                                             (7.59%)
+        4312294152      CPU_CLK_UNHALTED.ONE_THREAD_ACTIVE:u                                        (7.59%)
+      413839173634      CPU_CLK_UNHALTED.THREAD:u                                               (7.59%)
+       73093647192      UOPS_RETIRED.RETIRE_SLOTS:u                                             (7.59%)
+      147477739289      CYCLE_ACTIVITY.STALLS_MEM_ANY:u                                         (7.59%)
+       13477491974      EXE_ACTIVITY.2_PORTS_UTIL:u                                             (7.59%)
+      340434995748      CYCLE_ACTIVITY.STALLS_TOTAL:u                                           (7.58%)
+      193546311448      UOPS_ISSUED.ANY:u                                                       (7.59%)
+        8115417576 ns   duration_time:u                                                       
+        4311544628      CPU_CLK_UNHALTED.REF_XCLK:u      #     28.9 %  tma_ports_utilization    (7.58%)
+       87870419236      EXE_ACTIVITY.EXE_BOUND_0_PORTS:u                                        (7.58%)
+       30306775474      EXE_ACTIVITY.1_PORTS_UTIL:u                                             (7.57%)
+        4310154412      CPU_CLK_UNHALTED.ONE_THREAD_ACTIVE:u                                        (7.57%)
+      413771105609      CPU_CLK_UNHALTED.THREAD:u        #      0.0 %  tma_divider              (7.56%)
+      168982323292      UOPS_RETIRED.RETIRE_SLOTS:u                                             (7.56%)
+      147555082010      CYCLE_ACTIVITY.STALLS_MEM_ANY:u                                         (7.56%)
+      340012728081      CYCLE_ACTIVITY.STALLS_TOTAL:u                                           (7.56%)
+       13609983598      EXE_ACTIVITY.2_PORTS_UTIL:u                                             (7.56%)
+            106013      ARITH.DIVIDER_ACTIVE:u                                                  (7.56%)
+        8115417576 ns   duration_time:u                                                       
+         726562813      MEM_LOAD_RETIRED.FB_HIT:u        #      0.2 %  tma_data_sharing         (0.97%)
+      402384998373      CPU_CLK_UNHALTED.REF_TSC:u                                              (0.97%)
+      402378068649      CPU_CLK_UNHALTED.THREAD:u                                               (0.97%)
+           8546269      OCR.DEMAND_DATA_RD.L3_HIT.HITM_OTHER_CORE:u                                        (0.97%)
+        2551081243      MEM_LOAD_RETIRED.L1_MISS:u                                              (0.97%)
+          58577430      MEM_LOAD_L3_HIT_RETIRED.XSNP_HITM:u                                        (0.97%)
+            738312      MEM_LOAD_L3_HIT_RETIRED.XSNP_HIT:u                                        (0.97%)
+          58032855      OCR.DEMAND_DATA_RD.L3_HIT.HIT_OTHER_CORE_FWD:u                                        (0.97%)
+        8115417576 ns   duration_time:u                                                       
+         726784335      MEM_LOAD_RETIRED.FB_HIT:u        #      0.0 %  tma_contested_accesses   (0.97%)
+            438444      MEM_LOAD_L3_HIT_RETIRED.XSNP_MISS:u                                        (0.97%)
+      401985607260      CPU_CLK_UNHALTED.REF_TSC:u                                              (0.97%)
+      401956663797      CPU_CLK_UNHALTED.THREAD:u                                               (0.97%)
+           8521962      OCR.DEMAND_DATA_RD.L3_HIT.HITM_OTHER_CORE:u                                        (0.97%)
+        2555611157      MEM_LOAD_RETIRED.L1_MISS:u                                              (0.97%)
+          54781826      MEM_LOAD_L3_HIT_RETIRED.XSNP_HITM:u                                        (0.97%)
+          54065424      OCR.DEMAND_DATA_RD.L3_HIT.HIT_OTHER_CORE_FWD:u                                        (0.97%)
+        8115417576 ns   duration_time:u                                                       
+        4201317332      CPU_CLK_UNHALTED.REF_XCLK:u      #      0.0 %  tma_assists            
+                                                  #      0.0 %  tma_microcode_sequencer
+                                                  #      0.0 %  tma_cisc                 (0.97%)
+       35525129968      IDQ.MS_UOPS:u                                                           (0.97%)
+                 0      FP_ASSIST.ANY:u                                                         (0.97%)
+        4201317332      CPU_CLK_UNHALTED.ONE_THREAD_ACTIVE:u                                        (0.97%)
+      403323477874      CPU_CLK_UNHALTED.THREAD:u                                               (0.97%)
+                 0      UOPS_RETIRED.RETIRE_SLOTS:u                                             (0.97%)
+      176639395169      UOPS_ISSUED.ANY:u                                                       (0.97%)
+                 0      OTHER_ASSISTS.ANY:u                                                     (0.97%)
+        8115417576 ns   duration_time:u                                                       
+      119810548465      INST_RETIRED.ANY:u               #     -6.5 %  tma_few_uops_instructions  (0.97%)
+        4172205206      CPU_CLK_UNHALTED.REF_XCLK:u                                             (0.97%)
+       35138196014      IDQ.MS_UOPS:u                                                           (0.97%)
+        4172205206      CPU_CLK_UNHALTED.ONE_THREAD_ACTIVE:u                                        (0.97%)
+      400529071018      CPU_CLK_UNHALTED.THREAD:u                                               (0.97%)
+       15950093202      UOPS_RETIRED.MACRO_FUSED:u                                              (0.97%)
+                 0      UOPS_RETIRED.RETIRE_SLOTS:u                                             (0.97%)
+      174929728771      UOPS_ISSUED.ANY:u                                                       (0.97%)
+        8115417576 ns   duration_time:u                                                       
+        4188668702      CPU_CLK_UNHALTED.REF_XCLK:u      #     10.3 %  tma_branch_mispredicts 
+                                                  #      0.9 %  tma_machine_clears       (0.97%)
+        1277815944      INT_MISC.RECOVERY_CYCLES:u                                              (0.97%)
+         182876594      BR_MISP_RETIRED.ALL_BRANCHES:u                                          (0.97%)
+        4188668702      CPU_CLK_UNHALTED.ONE_THREAD_ACTIVE:u                                        (0.97%)
+      402109891672      CPU_CLK_UNHALTED.THREAD:u                                               (0.97%)
+                 0      UOPS_RETIRED.RETIRE_SLOTS:u                                             (0.97%)
+      174829851334      UOPS_ISSUED.ANY:u                                                       (0.97%)
+          15376732      MACHINE_CLEARS.COUNT:u                                                  (0.97%)
+        8115417576 ns   duration_time:u                                                       
+       19516634602      OFFCORE_REQUESTS_OUTSTANDING.CYCLES_WITH_DEMAND_RFO:u #      5.0 %  tma_store_latency      
+                                                  #      0.2 %  tma_lock_latency         (0.97%)
+         146197451      MEM_INST_RETIRED.LOCK_LOADS:u                                           (0.97%)
+          89493153      L2_RQSTS.RFO_HIT:u                                                      (0.97%)
+        9149240924      MEM_INST_RETIRED.ALL_STORES:u                                           (0.97%)
+         118152961      L2_RQSTS.ALL_RFO:u                                                      (0.97%)
+      402886444952      CPU_CLK_UNHALTED.THREAD:u                                               (0.97%)
+        8115417576 ns   duration_time:u                                                       
+           1463542      OCR.PF_L2_RFO.L3_HIT.HITM_OTHER_CORE:u #      0.0 %  tma_false_sharing        (7.56%)
+           4679599      OCR.DEMAND_RFO.L3_HIT.HITM_OTHER_CORE:u                                        (7.56%)
+            201335      OCR.DEMAND_RFO.L3_MISS.REMOTE_HITM:u                                        (1.89%)
+      413135006913      CPU_CLK_UNHALTED.REF_TSC:u                                              (2.83%)
+      413301653989      CPU_CLK_UNHALTED.THREAD:u                                               (3.78%)
+            649070      OCR.PF_L2_RFO.L3_MISS.REMOTE_HITM:u                                        (3.78%)
+        8115417576 ns   duration_time:u                                                       
+                 0      LD_BLOCKS.NO_SR:u                #      0.0 %  tma_split_loads          (0.97%)
+         684099850      MEM_LOAD_RETIRED.FB_HIT:u                                               (0.97%)
+      402188678470      CPU_CLK_UNHALTED.THREAD:u                                               (0.97%)
+      302938522702      L1D_PEND_MISS.PENDING:u                                                 (0.97%)
+        2468922637      MEM_LOAD_RETIRED.L1_MISS:u                                              (0.97%)
+        8115417576 ns   duration_time:u                                                       
+        1402370319      MEM_LOAD_RETIRED.L3_HIT:u        #      2.0 %  tma_l3_hit_latency       (0.97%)
+         682939200      MEM_LOAD_RETIRED.FB_HIT:u                                               (0.97%)
+      401818510420      CPU_CLK_UNHALTED.THREAD:u                                               (0.97%)
+      401824372260      CPU_CLK_UNHALTED.REF_TSC:u                                              (0.97%)
+        2437349859      MEM_LOAD_RETIRED.L1_MISS:u                                              (0.97%)
+        8115417576 ns   duration_time:u                                                       
+         399630972      cpu/L1D_PEND_MISS.FB_FULL,cmask=0x1/u #      9.6 %  tma_fb_full              (0.97%)
+         692185796      MEM_LOAD_RETIRED.FB_HIT:u                                               (0.97%)
+      402644932350      CPU_CLK_UNHALTED.THREAD:u                                               (0.97%)
+      304783452555      L1D_PEND_MISS.PENDING:u                                                 (0.97%)
+        2458129044      MEM_LOAD_RETIRED.L1_MISS:u                                              (0.97%)
+        8115417576 ns   duration_time:u                                                       
+          36285982      DTLB_STORE_MISSES.WALK_ACTIVE:u  #      0.0 %  tma_dtlb_store           (0.97%)
+        4199584490      CPU_CLK_UNHALTED.REF_XCLK:u                                             (0.97%)
+           4501023      cpu/DTLB_STORE_MISSES.STLB_HIT,cmask=0x1/u                                        (0.97%)
+        4199584490      CPU_CLK_UNHALTED.ONE_THREAD_ACTIVE:u                                        (0.97%)
+      403157414206      CPU_CLK_UNHALTED.THREAD:u                                               (0.97%)
+        8115417576 ns   duration_time:u                                                       
+         719957850      cpu/DTLB_LOAD_MISSES.STLB_HIT,cmask=0x1/u #      1.7 %  tma_dtlb_load            (0.97%)
+      110404241291      CYCLE_ACTIVITY.CYCLES_L1D_MISS:u                                        (0.97%)
+      401181511877      CPU_CLK_UNHALTED.THREAD:u                                               (0.97%)
+         326602434      DTLB_LOAD_MISSES.WALK_ACTIVE:u                                          (0.97%)
+      195134444011      CYCLE_ACTIVITY.CYCLES_MEM_ANY:u                                         (0.97%)
+        8115417576 ns   duration_time:u                                                       
+        4178093296      CPU_CLK_UNHALTED.REF_XCLK:u      #      0.7 %  tma_decoder0_alone       (0.96%)
+        4178093296      CPU_CLK_UNHALTED.ONE_THREAD_ACTIVE:u                                        (0.96%)
+      401094280253      CPU_CLK_UNHALTED.THREAD:u                                               (0.96%)
+       18191325361      cpu/INST_DECODED.DECODERS,cmask=0x1/u                                        (0.96%)
+       15287649984      cpu/INST_DECODED.DECODERS,cmask=0x2/u                                        (0.96%)
+        8115417576 ns   duration_time:u                                                       
+       18045361714      IDQ.ALL_MITE_CYCLES_ANY_UOPS:u   #      1.3 %  tma_mite                 (0.97%)
+        4186830293      CPU_CLK_UNHALTED.REF_XCLK:u                                             (0.97%)
+        4186830293      CPU_CLK_UNHALTED.ONE_THREAD_ACTIVE:u                                        (0.97%)
+      401932940316      CPU_CLK_UNHALTED.THREAD:u                                               (0.97%)
+        7576172372      IDQ.ALL_MITE_CYCLES_4_UOPS:u                                            (0.97%)
+        8115417576 ns   duration_time:u                                                       
+       17741466041      IDQ.ALL_DSB_CYCLES_4_UOPS:u      #      2.8 %  tma_dsb                  (0.96%)
+        4185974361      CPU_CLK_UNHALTED.REF_XCLK:u                                             (0.96%)
+        4185974361      CPU_CLK_UNHALTED.ONE_THREAD_ACTIVE:u                                        (0.96%)
+      401850443914      CPU_CLK_UNHALTED.THREAD:u                                               (0.96%)
+       40199745592      IDQ.ALL_DSB_CYCLES_ANY_UOPS:u                                           (0.96%)
+        8115417576 ns   duration_time:u                                                       
+        4189891008      CPU_CLK_UNHALTED.REF_XCLK:u      #      0.5 %  tma_fetch_latency      
+                                                  #      0.8 %  tma_fetch_bandwidth      (0.96%)
+       20453307329      IDQ_UOPS_NOT_DELIVERED.CORE:u                                           (0.96%)
+        4189891008      CPU_CLK_UNHALTED.ONE_THREAD_ACTIVE:u                                        (0.96%)
+      402227066589      CPU_CLK_UNHALTED.THREAD:u                                               (0.96%)
+        1895503037      IDQ_UOPS_NOT_DELIVERED.CYCLES_0_UOPS_DELIV.CORE:u                                        (0.96%)
+        8115417576 ns   duration_time:u                                                       
+          11993116      OFFCORE_REQUESTS_BUFFER.SQ_FULL:u #      0.0 %  tma_sq_full              (0.96%)
+        4182223348      CPU_CLK_UNHALTED.REF_XCLK:u                                             (0.96%)
+        4182223348      CPU_CLK_UNHALTED.ONE_THREAD_ACTIVE:u                                        (0.96%)
+      401490796938      CPU_CLK_UNHALTED.THREAD:u                                               (0.96%)
+        8115417576 ns   duration_time:u                                                       
+        4175260584      CPU_CLK_UNHALTED.REF_XCLK:u      #      0.0 %  tma_split_stores         (1.93%)
+           1244619      MEM_INST_RETIRED.SPLIT_STORES:u                                         (1.93%)
+        4175260584      CPU_CLK_UNHALTED.ONE_THREAD_ACTIVE:u                                        (1.93%)
+      400822580355      CPU_CLK_UNHALTED.THREAD:u                                               (1.93%)
+        8115417576 ns   duration_time:u                                                       
+        4173074216      CPU_CLK_UNHALTED.REF_XCLK:u      #      5.0 %  tma_ports_utilized_3m    (1.93%)
+       20107655056      UOPS_EXECUTED.CORE_CYCLES_GE_3:u                                        (1.93%)
+        4173074216      CPU_CLK_UNHALTED.ONE_THREAD_ACTIVE:u                                        (1.93%)
+      400612631535      CPU_CLK_UNHALTED.THREAD:u                                               (1.93%)
+        8115417576 ns   duration_time:u                                                       
+         182730648      BR_MISP_RETIRED.ALL_BRANCHES:u   #      0.0 %  tma_clears_resteers    
+                                                  #      0.2 %  tma_mispredicts_resteers  (1.93%)
+      400441735424      CPU_CLK_UNHALTED.THREAD:u                                               (1.93%)
+          14858248      MACHINE_CLEARS.COUNT:u                                                  (1.93%)
+        1040158969      INT_MISC.CLEAR_RESTEER_CYCLES:u                                         (1.93%)
+        8115417576 ns   duration_time:u                                                       
+      120558458121      OFFCORE_REQUESTS_OUTSTANDING.CYCLES_WITH_DATA_RD:u #     18.8 %  tma_mem_latency          (1.93%)
+      400720832468      CPU_CLK_UNHALTED.THREAD:u        #     11.3 %  tma_mem_bandwidth        (1.93%)
+       45094330606      cpu/OFFCORE_REQUESTS_OUTSTANDING.ALL_DATA_RD,cmask=0x4/u                                        (1.93%)
+        8115417576 ns   duration_time:u                                                       
+       91188680542      CYCLE_ACTIVITY.STALLS_L1D_MISS:u #     12.9 %  tma_l1_bound             (1.93%)
+      401441149278      CPU_CLK_UNHALTED.THREAD:u                                               (1.93%)
+      142786548125      CYCLE_ACTIVITY.STALLS_MEM_ANY:u                                         (1.93%)
+        8115417576 ns   duration_time:u                                                       
+          34711589      ICACHE_16B.IFDATA_STALL:u        #      0.0 %  tma_icache_misses        (1.92%)
+      401933525558      CPU_CLK_UNHALTED.THREAD:u                                               (1.92%)
+           1130307      cpu/ICACHE_16B.IFDATA_STALL,cmask=0x1,edge=0x1/u                                        (1.92%)
+        8115417576 ns   duration_time:u                                                       
+           6671215      BACLEARS.ANY:u                   #      0.0 %  tma_unknown_branches   
+                                                  #      0.3 %  tma_branch_resteers      (1.92%)
+      402047091825      CPU_CLK_UNHALTED.THREAD:u                                               (1.92%)
+        1049224863      INT_MISC.CLEAR_RESTEER_CYCLES:u                                         (1.92%)
+        8115417576 ns   duration_time:u                                                       
+      401750111759      CPU_CLK_UNHALTED.THREAD:u        #      0.0 %  tma_store_fwd_blk        (2.88%)
+            712196      LD_BLOCKS.STORE_FORWARD:u                                               (2.88%)
+        8115417576 ns   duration_time:u                                                       
+      402048216643      CPU_CLK_UNHALTED.THREAD:u        #      0.0 %  tma_4k_aliasing          (2.88%)
+         102720136      LD_BLOCKS_PARTIAL.ADDRESS_ALIAS:u                                        (2.88%)
+        8115417576 ns   duration_time:u                                                       
+      401750055598      CPU_CLK_UNHALTED.THREAD:u        #      5.6 %  tma_ms_switches          (2.88%)
+       11313309597      IDQ.MS_SWITCHES:u                                                       (2.88%)
+        8115417576 ns   duration_time:u                                                       
+               130      ILD_STALL.LCP:u                  #      0.0 %  tma_lcp                  (3.84%)
+      401638998204      CPU_CLK_UNHALTED.THREAD:u                                               (3.84%)
+        8115417576 ns   duration_time:u                                                       
+          45795832      ICACHE_64B.IFTAG_STALL:u         #      0.0 %  tma_itlb_misses          (3.84%)
+      401758204853      CPU_CLK_UNHALTED.THREAD:u                                               (3.84%)
+        8115417576 ns   duration_time:u                                                       
+         944695622      DSB2MITE_SWITCHES.PENALTY_CYCLES:u #      0.2 %  tma_dsb_switches         (3.84%)
+      400829223690      CPU_CLK_UNHALTED.THREAD:u                                               (3.84%)
+        8115417576 ns   duration_time:u                                                       
+       42237679258      L1-dcache-loads:u                                                       (3.84%)
+        3118448417      L1-dcache-load-misses:u          #    6.86% of all L1-dcache accesses   (4.80%)
+        2224488023      LLC-loads:u                                                             (4.80%)
+         610201208      LLC-load-misses:u                #   27.25% of all LL-cache accesses    (5.76%)
+
+       8.115417576 seconds time elapsed
+
+     172.650794000 seconds user
+       7.780185000 seconds sys
+
+
