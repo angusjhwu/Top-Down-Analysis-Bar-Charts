@@ -43,3 +43,15 @@ It also supports a "Relative" and "Non-Relative" mode, where for each group of b
 
 ### Two Level Hierarchy
 ![Single Non-relative](./demo/readmeincl/sample_hierarchical_nonrelative.png "Single Non-relative") ![Single Relative](./demo/readmeincl/sample_hierarchical_relative.png "Single Relative")
+
+
+## Demo
+
+The demo includes top down data and runtime data. It is also preconfigured with the perflist file specific to the architecture used to generate the top down data.
+
+Two examples are included in the python file (refer to comments in `main`). Run the code below. It should generate charts in `./demo/td_charts`.
+
+```
+cd ./demo
+python3 ../tda_barcharts.py
+```
