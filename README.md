@@ -30,3 +30,16 @@ perf stat -e <events> -M <metrics> -d <your program command> > <logfile>`
 
 python3 <path_to>/tda_barcharts.py
 ```
+
+
+## Sample Output
+
+The script supports multiple levels of hierarchies.
+
+It also supports a "Relative" and "Non-Relative" mode, where for each group of bars, the subsequent bars in the group are normalized to the runtime of the first bar of the group.
+
+### Single Level Hierarchy
+![Single Non-relative](./demo/readmeincl/sample_single_nonrelative.png "Single Non-relative") ![Single Relative](./demo/readmeincl/sample_single_relative.png "Single Relative")
+
+### Two Level Hierarchy
+![Single Non-relative](./demo/readmeincl/sample_hierarchical_nonrelative.png "Single Non-relative") ![Single Relative](./demo/readmeincl/sample_hierarchical_relative.png "Single Relative")
