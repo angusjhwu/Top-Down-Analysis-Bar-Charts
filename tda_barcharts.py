@@ -7,7 +7,7 @@ if __name__ == '__main__':
     ##### CONFIGURE CHART OUTPUT #####
     # Edit these to match your use
     CUR_DIR = os.path.dirname(os.path.realpath(__file__))
-    chart_output_dir: str = f'{CUR_DIR}/demo/td_charts_test'
+    chart_output_dir: str = f'{CUR_DIR}/demo/td_charts'
     
     # Each combination of these categories will have a separate folder of name '{cat0}_{cat1}_...'
     categories: list[str] = ['Algo', 'Impl']
