@@ -15,13 +15,13 @@ if __name__ == '__main__':
     # Bar charts will be grouped by these categories in each figure in order of higher to lower hierarchy
     
     ### Example 1: compare between each implementation
-    diff_hyperparam: list[str] = ['Impl']
-    diff_hyperparam_order: list[list[str]] = [['implX', 'implY', 'implZ']]
+    # diff_hyperparam: list[str] = ['Impl']
+    # diff_hyperparam_order: list[list[str]] = [['implX', 'implY', 'implZ']]
     
     # ### Example 2: compare between each implementation, as well as algo
-    # diff_hyperparam: list[str] = ['Algo', 'Impl']
-    # diff_hyperparam_order: list[list[str]] = [['algoA', 'algoB'],
-    #                                           ['implX', 'implY', 'implZ']]
+    diff_hyperparam: list[str] = ['Algo', 'Impl']
+    diff_hyperparam_order: list[list[str]] = [['algoA', 'algoB'],
+                                              ['implX', 'implY', 'implZ']]
         
     # The list of metrics to create top down charts of
     track_metrics = ['Top_Level', \

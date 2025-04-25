@@ -638,7 +638,7 @@ def generate_batch_of_graphs(
     track_metrics: list[str],
     chart_dir: str,
     runtime: dict[tuple, int] = None,
-    relative_scaling: bool = False
+    relative_scaling: str = None
     ) -> None:
     
     max_hierarchy = 2
@@ -646,9 +646,9 @@ def generate_batch_of_graphs(
     assert all([(d in categories) for d in diff_hyperparam]), ([(d in categories) for d in diff_hyperparam])
     assert len(diff_hyperparam) == len(diff_hyperparam_order)
     
-    if (not runtime) and relative_scaling:
+    if (not runtime) and (relative_scaling is not None):
         print("No runtimes provided, relative_scaling is turned off")
-        relative_scaling = False    # runtimes are required for this feature
+        relative_scaling = None    # runtimes are required for this feature
     
     metricdb_dict: dict[tuple, MetricsDatabase] = {}
     print('extracting data from topdown log files...')
@@ -728,19 +728,32 @@ def new_dataframe_to_stackedbarchart(
         offsets = reduce(lambda a, b: a+b, offsets)
         xpos = [x+y for x,y in zip(xpos, offsets)]
                 
-    fig, ax = plt.subplots(figsize=(10, 6))
+    fig, ax = plt.subplots(figsize=(13, 6))
 
     # relative scaling (relative to the first bar of the lowest hierarchy)
-    if rel_scaling:
+    if rel_scaling == "local":
         scaling: list[float] = []
         n_lowest_hier = len(diff_hyperparam_order[-1])
         baseline = 1
         for i, row in df.iterrows():
             rtms = row['runtime_ms'] if (row['runtime_ms'] is not None) else 1
             rel_val = rtms * row['glob_pct']
-            if i % n_lowest_hier == 0:
+            if i % n_lowest_hier == 0:    # normalized to first bar of each section
                 baseline = rel_val
             scaling.append(rel_val / baseline)
+        assert len(scaling) == len(df)
+    elif rel_scaling == "global":
+        scaling: list[float] = []
+        n_lowest_hier = len(diff_hyperparam_order[-1])
+        baseline = 1
+        for i, row in df.iterrows():
+            rtms = row['runtime_ms'] if (row['runtime_ms'] is not None) else 1
+            rel_val = rtms * row['glob_pct']
+            if i == 0:      # normalized to global first bar
+                baseline = rel_val
+            # scaling.append(rel_val / baseline)
+            scaling.append(rel_val/100)
+            # print(rel_val)
         assert len(scaling) == len(df)
     else:
         scaling = [1.0] * total_num_bars
@@ -755,28 +768,46 @@ def new_dataframe_to_stackedbarchart(
         for bar in bars:
             height = bar.get_height()
             if height > 0:
-                ax.text(
-                    bar.get_x() + bar.get_width() / 2, 
-                    bar.get_y() + height / 2, 
-                    f'{height:.2f}', 
-                    ha='center', 
-                    va='center',
-                    fontsize=9
-                )
+                if rel_scaling == "global":
+                    ax.text(
+                        bar.get_x() + bar.get_width() / 2, 
+                        bar.get_y() + height / 2, 
+                        f'{height:.0f}', 
+                        ha='center', 
+                        va='center',
+                        fontsize=9
+                    )
+                else:
+                    ax.text(
+                        bar.get_x() + bar.get_width() / 2, 
+                        bar.get_y() + height / 2, 
+                        f'{height:.1f}', 
+                        ha='center', 
+                        va='center',
+                        fontsize=9
+                    )
         bottom = [i + j for i, j in zip(bottom, heights)]
         
     # Add scaling numbers on top of each stacked bar
-    if rel_scaling:
+    if rel_scaling == "local":
         for i, (rect, scal) in enumerate(zip(ax.patches, scaling)):
             height = bottom[i]
             x_pos = rect.get_x() + rect.get_width() / 2
             ax.text(x_pos, height + 0.5,  # Add a small offset to avoid overlap
-                    f'{scal:5.3f}x',
+                    f'{scal:5.2f}x',
+                    ha='center', va='bottom',
+                    rotation=15, fontsize=8)
+    elif rel_scaling == "global":
+        for i, (rect, scal) in enumerate(zip(ax.patches, scaling)):
+            height = bottom[i]
+            x_pos = rect.get_x() + rect.get_width() / 2
+            ax.text(x_pos, height + 0.5,  # Add a small offset to avoid overlap
+                    f'{scal*100:5.0f}',
                     ha='center', va='bottom',
                     rotation=15, fontsize=8)
         
     # Set X-axis labels with hierarchical index
-    ax.set_xticks(xpos, labels=diff_hyperparam_order[-1] * (total_num_bars // len(diff_hyperparam_order[-1])), rotation=20)
+    ax.set_xticks(xpos, labels=diff_hyperparam_order[-1] * (total_num_bars // len(diff_hyperparam_order[-1])), rotation=35, ha='right', rotation_mode='anchor')
     ax.tick_params(axis='x', which='minor')
         
     # Group by Major category
@@ -786,22 +817,39 @@ def new_dataframe_to_stackedbarchart(
         n_minor = len(diff_hyperparam_order[-1])
         maj_label_pos = [(xpos[i] + xpos[i+n_minor-1])/2 for i in range(0, total_num_bars, n_minor)]
         maj.set_xticks(maj_label_pos, labels=diff_hyperparam_order[-2])
-        maj.tick_params('x', length=0, pad=30, which='major')
+        maj.tick_params('x', length=0, pad=60, which='major')
 
     ax.set_xlim(0-side_pad, xpos[-1] + side_pad)
-    ax.set_ylim(0, max(bottom) + 8)  # Adjust the 15 to give enough space for the tallest bar
+    # ax.set_ylim(0, max(bottom) + 8)  # Adjust the 15 to give enough space for the tallest bar
+    ax.set_ylim(0, max(bottom)*1.08)
     
     # Add legend and labels
-    xlab = ' & '.join(list(reversed(diff_hyperparam)))
+    xlab = ' & '.join(list(diff_hyperparam))
     ax.set_xlabel(xlab, labelpad=20)
-    ax.set_ylabel('Percentage Normalized to Runtime')
-    plot_title = plotname.split('/')[-1].replace('_tma', '').replace('_normalized', '').replace('_', ' ')
-    ax.set_title(f'{plot_title} Metrics by {xlab}{" (normalized runtime)"*rel_scaling}')
+    if rel_scaling == "local":
+        ax.set_ylabel('Percentage of Runtime')
+        plot_title = plotname.split('/')[-1].replace('_tma', '').replace('_normalized', '').replace('_', ' ')
+        # ax.set_title(f'{plot_title} Metrics by {xlab} (runtime relative to each group)')
+        ax.set_title(f'{plot_title} Metrics (runtime relative to each group)')
+    elif rel_scaling == "global":
+        ax.set_ylabel('Runtime [ms]')
+        plot_title = plotname.split('/')[-1].replace('_tma', '').replace('_normalized', '').replace('_', ' ')
+        ax.set_title(f'{plot_title} Metrics')
+    else:
+        ax.set_ylabel('Percentage of Runtime')
+        plot_title = plotname.split('/')[-1].replace('_tma', '').replace('_normalized', '').replace('_', ' ')
+        ax.set_title(f'{plot_title} Metrics')
+
     plt.tight_layout(rect=[0, 0, 0.75, 1])
     handles, labels = ax.get_legend_handles_labels()
     ax.legend(handles[::-1], labels[::-1], loc='upper left', bbox_to_anchor=(1.04, 0.9), borderaxespad=0)
     
-    plotname = f'{plotname}{"_normalized"*rel_scaling}.png'
+    if rel_scaling == "local":
+        plotname = f'{plotname}_local_runtime.png'
+    elif rel_scaling == "global":
+        plotname = f'{plotname}_global_runtime.png'
+    else:
+        plotname = f'{plotname}_normalized.png'
     plt.savefig(f'{plotname}')
     plt.close(fig)
     print(f'plot saved to {plotname}')
