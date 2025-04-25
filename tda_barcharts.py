@@ -105,7 +105,7 @@ if __name__ == '__main__':
                                     track_metrics,
                                     chart_output_dir,
                                     runtimes,
-                                    relative_scaling=False)
+                                    relative_scaling=None)
     tda_lib.generate_batch_of_graphs(categories,
                                     diff_hyperparam,
                                     diff_hyperparam_order,
@@ -114,4 +114,13 @@ if __name__ == '__main__':
                                     track_metrics,
                                     chart_output_dir,
                                     runtimes,
-                                    relative_scaling=True)
+                                    relative_scaling='local')
+    tda_lib.generate_batch_of_graphs(categories,
+                                    diff_hyperparam,
+                                    diff_hyperparam_order,
+                                    report_files,
+                                    get_args_from_filename,
+                                    track_metrics,
+                                    chart_output_dir,
+                                    runtimes,
+                                    relative_scaling='global')
